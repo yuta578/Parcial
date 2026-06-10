@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruleta de Vocabulario en Inglés</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  
+  <p>Gira la ruleta, escucha la palabra y repítela en voz alta</p>
+</header>
+
+<div class="main-grid">
+  <div class="side-left">
+    <div class="card">
+      <h2>📊 Puntaje</h2>
+      <div class="score-grid">
+        <div class="score-box total"><div class="val" id="scoreTotal">0</div><div class="lbl">Puntos</div></div>
+        <div class="score-box ok">  <div class="val" id="scoreOk">0</div>   <div class="lbl">Correctas</div></div>
+        <div class="score-box fail"><div class="val" id="scoreFail">0</div> <div class="lbl">Errores</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📋 Palabras</h2>
+      <div class="word-list" id="wordList"></div>
+    </div>
+  </div>
+
+  <div class="wheel-section">
+
+    <div class="wheel-wrap">
+      <div class="pointer"></div>
+      <canvas id="wheelCanvas"></canvas>
+      <button id="spinBtn">GIRAR</button>
+    </div>
+
+    <div id="resultPanel">
+      <div class="word-hint">Gira la ruleta para empezar</div>
+    </div>
+
+    <button id="micBtn" disabled>🎤 Pronunciar palabra</button>
+
+    <div id="feedback" class="neutral">Esperando...</div>
+
+  </div>
+
+  <!-- ===== RIGHT SIDE ===== -->
+  <div class="side-right">
+
+    <div class="card">
+      <h2>📖 Historial</h2>
+      <ul id="historyList">
+        <li><span class="icon">💡</span><span>Aún no hay intentos</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>ℹ️ Cómo jugar</h2>
+      <ol style="padding-left:16px;font-size:.85rem;line-height:1.8;color:var(--muted)">
+        <li>Presiona <strong style="color:var(--text)">GIRAR</strong></li>
+        <li>Escucha la pronunciación automática</li>
+        <li>Presiona el botón del 🎤 micrófono</li>
+        <li>Di la palabra en voz alta</li>
+        <li>¡Obtén puntos por cada acierto!</li>
+      </ol>
+    </div>
+
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
